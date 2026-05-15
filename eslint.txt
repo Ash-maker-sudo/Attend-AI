@@ -1,0 +1,116 @@
+
+D:\AttendAI\src\components\Sidebar.jsx
+   2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                        no-unused-vars
+  13:29  error  'setSidebarCollapsed' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\AttendAI\src\components\Topbar.jsx
+  4:10  error  'cn' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  6:34  error  'role' is defined but never used                                           no-unused-vars
+
+D:\AttendAI\src\pages\auth\Login.jsx
+  5:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\AttendAI\src\pages\student\Attendance.jsx
+  1:10  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u    no-unused-vars
+
+D:\AttendAI\src\pages\student\Dashboard.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\AttendAI\src\pages\student\FaceRegistration.jsx
+   2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              no-unused-vars
+   5:10  error  'isFaceApiReady' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no-unused-vars
+  10:11  error  'user' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       no-unused-vars
+  25:12  error  Error: Cannot access variable before it is declared
+
+`stopCamera` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+  23 |   useEffect(() => {
+  24 |     loadFaceApiModels().then(loaded => setModelsLoaded(loaded))
+> 25 |     return stopCamera
+     |            ^^^^^^^^^^ `stopCamera` accessed before it is declared
+  26 |   }, [])
+  27 |
+  28 |   const startCamera = async () => {
+
+  41 |   }
+  42 |
+> 43 |   const stopCamera = () => {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 44 |     if (streamRef.current) {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 45 |       streamRef.current.getTracks().forEach(t => t.stop())
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 46 |       streamRef.current = null
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 47 |     }
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 48 |     clearInterval(detectionInterval.current)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 49 |   }
+     | ^^^^ `stopCamera` is declared here
+  50 |
+  51 |   const handleStartScan = () => {
+  52 |     setStep(2)  react-hooks/immutability
+
+D:\AttendAI\src\pages\student\History.jsx
+  7:10  error  'monthOffset' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     no-unused-vars
+  7:23  error  'setMonthOffset' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\AttendAI\src\pages\teacher\Attendance.jsx
+   3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          no-unused-vars
+   4:10  error  'useAuthStore' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    no-unused-vars
+   6:10  error  'isFaceApiReady' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  no-unused-vars
+   6:74  error  'matchFace' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       no-unused-vars
+  29:12  error  Error: Cannot access variable before it is declared
+
+`stopCamera` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+  27 |   useEffect(() => {
+  28 |     loadFaceApiModels().then(loaded => setModelsLoaded(loaded))
+> 29 |     return stopCamera
+     |            ^^^^^^^^^^ `stopCamera` accessed before it is declared
+  30 |   }, [])
+  31 |
+  32 |   const startCamera = async () => {
+
+  45 |   }
+  46 |
+> 47 |   const stopCamera = () => {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 48 |     if (streamRef.current) {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 49 |       streamRef.current.getTracks().forEach(t => t.stop())
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 50 |       streamRef.current = null
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 51 |       setIsCameraOn(false)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 52 |     }
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 53 |     clearInterval(detectionInterval.current)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 54 |   }
+     | ^^^^ `stopCamera` is declared here
+  55 |
+  56 |   const toggleCamera = () => isCameraOn ? stopCamera() : startCamera()
+  57 |  react-hooks/immutability
+
+D:\AttendAI\src\pages\teacher\Classes.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  6:10  error  'cn' is defined but never used. Allowed unused vars must match /^[A-Z_]/u      no-unused-vars
+
+D:\AttendAI\src\pages\teacher\Dashboard.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\AttendAI\src\pages\teacher\Students.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\AttendAI\src\store\appStore.js
+  6:11  error  'get' is defined but never used  no-unused-vars
+
+D:\AttendAI\src\store\authStore.js
+  33:11  error  'get' is defined but never used  no-unused-vars
+
+✖ 25 problems (25 errors, 0 warnings)
+
